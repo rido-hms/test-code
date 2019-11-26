@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'IarBuild.exe iar_test.ewp -build Debug -log all'
+        sh '''CD C:\\Program Files (x86)\\Jenkins\\workspace\\test-code_master
+IarBuild.exe iar_test.ewp -build Debug -log all
+echo \'done\''''
         echo 'Compile complete'
       }
     }
